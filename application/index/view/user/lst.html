@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+-------------
+{foreach $users as $u}
+{$u.name}--{$u.age}|||
+{eq name='u.age' value='13'}
+13--okok
+{/eq}
+<br/>
+
+
+
+{/foreach}
+<br/>
+--------------------------
+{volist name='users' id='uu' empty='暂时没数据'}
+{if $uu['age'] == 13} ThinkPHP
+{else /} other Framework
+{/if}
+<br/>
+{in name='uu.age' value='133,100'}in 13{/in}
+<br/>
+//有效
+{switch $uu.age}
+{case 13}1300{/case}
+{case 25}21{/case}
+{default /}10
+{/switch}
+{/volist}
+<br/>
+-------------------
+{for start="1" end="100"}
+{$i}
+{/for}
+---------------
+
+
+</body>
+</html>
